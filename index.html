@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>square</title>
+    <style>
+        .square {
+            width: 200px;
+            height:200px;
+            margin: 20px;
+            background-color: palevioletred;
+        }
+        .square.color{
+            background-color: blueviolet;
+        }
+        .square.border{
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+    <button id="color"> change to purple </button>
+    <button id="border"> change to circle </button>
+    <button id="reset"> reset</button>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <script>
+        let square = document.querySelectorAll(".square")
+        let color = document.getElementById("color")
+        color.addEventListener("click" , function(){
+            square.forEach(function(item){
+                item.classList.add("color")
+                console.log(square)
+            })
+        })
+        
+        let border = document.getElementById("border")
+        border.addEventListener("click" , function(){
+            square.forEach(function(item){
+                item.classList.add("border")
+            })
+        })
+        let reset = document.getElementById("reset")
+        reset.addEventListener("click" , function(){
+          square.forEach(function(item){
+            item.classList.remove("border" , "color")
+          })  
+        })
+
+    </script>
+</body>
+</html>
